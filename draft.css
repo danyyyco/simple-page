@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%; /* → 1rem = 10px */
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 0 7px #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+header .active {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#logo img {
+  width: 40px;
+}
+
+#menu {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+#menu li {
+  position: relative;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+#menu a::after,
+#menu a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(244, 92, 54);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s ease;
+}
+
+#menu a::after {
+  top: 4px;
+}
+#menu a::before {
+  bottom: 4px;
+}
+
+#menu a:hover::before,
+#menu a:hover::after,
+#menu a.active::before,
+#menu a.active::after {
+  width: 100%;
+}
+
+#menu-burger {
+  display: none;
+}
+
+#accueil {
+  background: url("images/bg-home.jpg") no-repeat center / cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  /* text-align: center; */
+}
+
+/* #hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+} */
+
+#accueil h1 {
+  font-size: 5vw;
+}
+
+#accueil #text-banner {
+  margin: 100px;
+}
+
+#accueil .orange {
+  color: rgb(244, 92, 54);
+}
+
+#btns-banner img {
+  width: 20%;
+  position: relative;
+  bottom: 80px;
+  right: 110px;
+}
+
+form {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  gap: 100px;
+  color: black;
+  padding: 20px;
+  position: relative;
+  bottom: 80px;
+  right: 50px;
+  text-align: center;
+}
+
+input[type="search"]{
+    background-color: #eee;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+}
+input[type="date"]{
+    background-color: #ccc;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+}
+
+input[type="submit"]{
+    background-color: rgb(244, 92, 54);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+header .active {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#logo img {
+  width: 4rem;
+}
+
+#menu {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+#menu li {
+  position: relative;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+#menu a::after,
+#menu a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(244, 92, 54);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s ease;
+}
+
+#menu a::after {
+  top: 4px;
+}
+#menu a::before {
+  bottom: 4px; 
+}
+
+#menu a:hover::before,
+#menu a:hover::after,
+#menu a.active::before,
+#menu a.active::after {
+  width: 100%;
+}
+
+#menu-burger {
+  display: none;
+}
+
+#accueil {
+  background: url("images/bg-home.jpg") no-repeat center / cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+}
+
+#accueil h1 {
+  font-size: 5vw;
+}
+
+#accueil #text-banner {
+  margin: 10rem;
+}
+
+#accueil .orange {
+  color: rgb(244, 92, 54);
+}
+
+#btns-banner img {
+  width: 20%;
+  position: relative;
+  bottom: 8rem;
+  right: 11rem;
+}
+
+form {
+  background-color: white;
+  border-radius: 1rem; 
+  display: flex;
+  gap: 10rem;
+  color: black;
+  padding: 2rem;
+  position: relative;
+  bottom: 8rem;
+  right: 5rem;
+  text-align: center;
+}
+
+input[type="search"] {
+  background-color: #eee;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+}
+
+input[type="date"] {
+  background-color: #ccc;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: rgb(244, 92, 54);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+header .active {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  width: 2.5rem;
+}
+
+#menu {
+  display: flex;
+  gap: 1.25rem;
+  list-style-type: none;
+}
+
+#menu li {
+  position: relative;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  position: relative;
+}
+
+#menu a::after,
+#menu a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(244, 92, 54);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s ease;
+}
+
+#menu a::after {
+  top: 4px;
+}
+#menu a::before {
+  bottom: 4px;
+}
+
+#menu a:hover::before,
+#menu a:hover::after,
+#menu a.active::before,
+#menu a.active::after {
+  width: 100%;
+}
+
+#menu-burger {
+  display: none;
+}

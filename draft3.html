@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Responsive avec Ancres</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth; /* Scroll fluide */
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Logo */
+    .logo img {
+      width: 35px;
+      height: auto;
+    }
+
+    /* Liens */
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* Traits soulignés pour hover ET actif */
+    .nav-links a::before,
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #f0543a;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a::before {
+      top: -5px;
+    }
+
+    .nav-links a::after {
+      bottom: -5px;
+    }
+
+    /* Hover */
+    .nav-links a:hover::before,
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Actif (au clic) */
+    .nav-links a.active::before,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Icône utilisateur */
+    .user-icon {
+      background: #f0543a;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* --- Responsive --- */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+      }
+
+      .nav-links.show {
+        left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        padding: 10px 20px;
+      }
+    }
+
+    /* SECTIONS (juste pour la démo) */
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    #home { background: #f9f9f9; }
+    #voitures { background: #e3f2fd; }
+    #services { background: #ffe0b2; }
+    #apropos { background: #d1c4e9; }
+    #avis { background: #c8e6c9; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="https://img.icons8.com/emoji/48/car-emoji.png" alt="Car logo">
+    </div>
+
+    <!-- Liens -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#voitures">Voitures</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#avis">Les avis</a></li>
+    </ul>
+
+    <!-- Icône utilisateur -->
+    <div class="user-icon">
+      👤
+    </div>
+
+    <!-- Menu burger -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
+  </nav>
+
+  <!-- SECTIONS -->
+  <section id="home">🏠 Section Home</section>
+  <section id="voitures">🚗 Section Voitures</section>
+  <section id="services">🛠️ Section Services</section>
+  <section id="apropos">ℹ️ Section À propos</section>
+  <section id="avis">⭐ Section Avis</section>
+
+  <script>
+    // Gestion du menu burger
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const links = document.querySelectorAll(".nav-links a");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Activer focus sur le lien cliqué
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+        navLinks.classList.remove("show"); // ferme menu sur mobile
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notre Histoire</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #000;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title span {
+      color: #e74c3c;
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-title h1 {
+      font-size: 3rem;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-content h2 {
+      color: #e74c3c;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+        order: 1;
+        margin-bottom: 30px;
+      }
+
+      .about-content {
+        order: 2;
+        text-align: left;
+      }
+
+      .section-title h1 {
+        font-size: 2.2rem;
+      }
+
+      .about-content h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="section-title">
+      <span>Qui nous sommes ?</span>
+      <h1>Notre histoire !</h1>
+    </div>
+
+    <div class="about-container">
+      <div class="about-image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Audi_TT_Coupe_2010.jpg/1200px-Audi_TT_Coupe_2010.jpg" alt="Voiture Audi TT orange" />
+      </div>
+
+      <div class="about-content">
+        <h2>À propos de nous</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sint hic earum incident asperiores repellat dolore odit harum? Laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquam optio, accusantium, impedit odio deserunt ex perspiciatis labore atque reiciendis doloribus corporis, ipsum amet ipsam! Voluptatibus?</p>
+        <a href="#" class="btn">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
