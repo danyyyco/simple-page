@@ -9,6 +9,13 @@
   scroll-behavior: smooth;
 }
 
+#voitures,
+#services,
+#apropos,
+#avis {
+  margin-top: 10rem;
+}
+
 #voitures h1,
 #services h1,
 #apropos h1,
@@ -35,7 +42,7 @@
 
 #voitures a:hover,
 #apropos a:hover {
-    background-color: rgb(189, 56, 22);
+  background-color: rgb(189, 56, 22);
 }
 
 .mini-titre {
@@ -201,7 +208,8 @@ input[type="submit"] {
   gap: 3rem 0;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 5rem;
+  margin-top: 3rem;
+  margin-left: 4rem;
 }
 
 .voiture {
@@ -210,6 +218,7 @@ input[type="submit"] {
   padding: 1rem;
   margin: 1rem;
   height: 100%;
+  text-align: center;
 }
 
 .voiture-img img {
@@ -246,7 +255,6 @@ input[type="submit"] {
   margin-top: 1rem;
   width: 100%;
 }
-
 
 /* === À PROPOS === */
 
@@ -300,7 +308,6 @@ input[type="submit"] {
   max-width: 400px;
 }
 
-
 /* === AVIS ===  */
 
 .avis-contenu {
@@ -330,6 +337,8 @@ input[type="submit"] {
 .av-stars {
   color: orange;
 }
+
+/* === NEWSLETTER === */
 
 .newsletter-section {
   background-color: rgb(244, 92, 54);
@@ -371,6 +380,8 @@ input[type="submit"] {
 .newsletter-form button:hover {
   background-color: rgb(189, 56, 22);
 }
+
+/* === FOOTER === */
 
 footer {
   background-color: #000;
