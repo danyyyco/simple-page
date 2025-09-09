@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
+/* === CSS DE BASE ===*/
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,42 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
+
+#voitures h1,
+#services h1,
+#apropos h1,
+#avis h1 {
+  font-size: clamp(1.5rem, 4vw, 7rem);
+}
+
+.voitures-conteneur,
+.services-conteneur,
+.apropos-conteneur,
+.avis-conteneur {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.voitures-en-tete,
+.services-en-tete,
+.apropos-en-tete,
+.avis-en-tete {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#voitures a:hover,
+#apropos a:hover {
+    background-color: rgb(189, 56, 22);
+}
+
+.mini-titre {
+  color: rgb(244, 92, 54);
+  font-size: 1.2rem;
+}
+
+/*=== NAVBAR  ===*/
 
 nav {
   width: 100%;
@@ -85,31 +122,7 @@ nav {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: -100%;
-    flex-direction: column;
-    background: white;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    transition: left 0.3s ease;
-  }
-
-  .nav-links.show {
-    left: 0;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    padding: 10px 20px;
-  }
-}
+/* === HOME === */
 
 #home {
   background: url("images/bg-home.jpg") no-repeat center / cover;
@@ -179,31 +192,65 @@ input[type="submit"] {
   width: 100%;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* === VOITURES === */
+
+.voitures-contenu {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
+.voiture {
+  box-shadow: 0 0 2px #000;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  height: 100%;
 }
 
-.section-title span {
-  color: rgb(244, 92, 54);
-  font-size: 1.2rem;
+.voiture-img img {
+  width: 300px;
+  border-radius: 5px;
+}
+
+.voiture span {
   display: block;
-  margin-bottom: 10px;
+  width: 20%;
+  margin: 0.5rem;
 }
 
-.section-title h1 {
-  font-size: 3rem;
-  color: #000;
-  font-weight: bold;
+.annee {
+  background-color: rgb(244, 92, 54);
+  color: white;
+  padding: 0.1rem 0.6rem;
+  border-radius: 7px;
 }
 
-.about-container {
+.prix {
+  color: rgb(244, 92, 54);
+  font-weight: 700;
+}
+
+#voitures a {
+  display: block;
+  background-color: rgb(244, 92, 54);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 7rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+
+/* === À PROPOS === */
+
+.apropos-contenu {
   display: flex;
   align-items: center;
   gap: 50px;
@@ -211,37 +258,35 @@ input[type="submit"] {
   flex-wrap: wrap;
 }
 
-.about-image {
+.apropos-img {
   flex: 1;
   min-width: 300px;
 }
 
-.about-image img {
+.apropos-img img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.about-content {
+.apropos-texte {
   flex: 1;
   min-width: 300px;
 }
 
-.about-content h2 {
-  color: #e74c3c;
+.apropos-texte h2 {
+  color: rgb(244, 92, 54);
   font-size: 1.3rem;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.about-content p {
+.apropos-texte p {
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
 
-.btn {
+#apropos a {
   display: inline-block;
   background-color: rgb(244, 92, 54);
   color: white;
@@ -255,34 +300,35 @@ input[type="submit"] {
   max-width: 400px;
 }
 
-.btn:hover {
-  background-color: rgb(189, 56, 22);
+
+/* === AVIS ===  */
+
+.avis-contenu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
 }
 
+.av {
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 2px solid red;
+  text-align: center;
+}
 
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
+.av:hover {
+  background-color: #ccc;
+}
 
-  .about-image {
-    order: 1;
-    margin-bottom: 30px;
-  }
+.av-img img {
+  width: 80px;
+  clip-path: circle();
+}
 
-  .about-content {
-    order: 2;
-    text-align: left;
-  }
-
-  .section-title h1 {
-    font-size: 2.2rem;
-  }
-
-  .about-content h2 {
-    font-size: 1.2rem;
-  }
+.av-stars {
+  color: orange;
 }
 
 .newsletter-section {
@@ -409,7 +455,57 @@ footer a:hover {
   font-size: 1rem;
 }
 
+/* === RESPONSIVE === */
+
 @media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    transition: left 0.3s ease;
+  }
+
+  .nav-links.show {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    padding: 10px 20px;
+  }
+
+  .apropos-contenu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .apropos-img {
+    order: 1;
+    margin-bottom: 30px;
+  }
+
+  .apropos-texte {
+    order: 2;
+    text-align: left;
+  }
+
+  .apropos-en-tete h1 {
+    font-size: 2.2rem;
+  }
+
+  .apropos-texte h2 {
+    font-size: 1.2rem;
+  }
+
   .newsletter-form {
     flex-direction: column;
   }
